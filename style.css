@@ -1,0 +1,410 @@
+/* *{
+    font-family: 'Montserrat', sans-serif;
+} */
+/* step-1 basic set up ->link,icon link ,all connection*/
+/* step-2 layout -> devide the whole thing into 3 parts , overflow,color ,size */
+/* step-3 navbar-> */
+/* step-4 navbar Library devided into 2 upper small then big */
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* margin is a good practise  because by default unnecessary mergin is not needed  */
+    margin: 0px; 
+    /* overflow will be needed only for mainbody rathar that u will not use the thing anywhere so thats why i will put the full body part overflow:hidden */
+    overflow: hidden;
+    color: white;
+    background-color: black;
+}
+
+.main{
+    display: flex;
+    /* vh (viewport ) means take the full portion that is visible in the my mac */
+    height: 100vh;
+    padding: .7rem;
+}
+.sidebar{
+    background-color:black ;
+    /* background-color:green;  it is benecial while working after that i have to delete it */
+    width: 340px;
+    border-radius: 1rem;
+    margin-right: .5rem;
+    
+    /* 1rem =16px (its depends on window's size ,like if the size become smaller then the border-radius will become smaller as well */
+}
+ .main-content{ 
+    background-color:#121212; 
+    /* flex:1 means || give the full left portion after all the divs takes their own spaces */
+    flex: 1;
+    border-radius: 1rem;
+    /* auto means ,alltime i will not see the scroll bar but i will see them when its needed  */
+     overflow: auto;
+     padding : 0rem 1.5rem 0rem 1.5rem;
+ }
+
+.music-player{
+    background-color: black;
+    /* when i need to take a part fixed in the upper portion or lower portion i need to use position fixed */
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 72px;
+}
+a{
+    color:white;
+    /* text decoration will clear the underline */
+    text-decoration: none;
+}
+
+.nav{
+    background-color: #121212;
+    border-radius: 1rem;
+    display: flex;
+    /* flex will make everthing in a line so coloum wise change korte caile use flex-direction:colum*/
+    
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10px;
+    height: 100px;
+     
+    
+
+}
+
+.nav-option{
+    /* *************important  if i want to use space in a div for two or many lines */
+    line-height:2.5rem;
+    /* upore nile jei dark hoi oita opacity diye control koro */
+    opacity: .7;
+    padding: 0.5rem ;
+}
+/* .nav-option   :hover space dile kaaj kroe na  */
+.nav-option:hover{
+   
+    opacity: 1;
+}
+.nav-option i{
+    font-size: 1.25rem;
+    
+
+}
+.nav-option a{
+    font-size: 1rem ;
+    margin-left: 1rem;
+}
+
+/* ________________________________ */
+.library{
+    /*  padding: 10px(up) 50px(leftright) 30pxdown ;*/
+    /* padding: 103px(uo) 533px(right) 30px(down) 41px(left; */
+    background-color: #121212;
+    border-radius: 1rem;
+    height:100%;
+    margin-top: .5rem;
+    padding: 0.5rem 0.75rem;
+}
+.options{
+    display: flex;
+    /* left and right e sorai dise   */
+    justify-content: space-between; 
+    align-items: center;
+}
+.lab-options img{
+    height: 1.25rem ;
+    width: 1.25rem; 
+}
+
+.icons{
+    font-size: 1.2rem;
+    
+   
+    display: flex;
+}
+.icons i {
+    opacity: 0.7; 
+    margin-right: 1rem;
+}
+.icons i:hover{
+    opacity: 1;
+}
+.box{
+    height: 8rem;
+    background-color: #232323;
+    border-radius: .75rem ;
+    margin: 0.75rem 0rem 1.7rem 0rem;
+    /* top right bottom left */
+    padding: .25rem 1rem;
+}
+.box-p1{
+    font-size: 1rem;
+    font-weight: 500 ;
+}
+.box-p2{
+    font-size: .85rem;
+    opacity: 0.9;
+}
+.badge{
+    background-color: white;
+    /* button by default border tthake so tackle that  */
+    border: none;
+    border-radius: 100px;
+    padding: .25rem 1rem;
+    font-weight: 700;
+    margin-top: 0.5 rem  ;
+    height: 2rem;
+    /* button e joto tuku place ashe oita fit kore nibe nijeke */
+    width: fit-content;
+}
+.dark-badge{
+    background-color: black;
+    color: white;
+}
+.sticky-nav{
+    /* navbar cant move now if i have to scroll down  top =0px set must*/ 
+    position: sticky;
+    top: 0px;
+    background-color: #121212;
+    display: flex;
+    justify-content: space-between;
+    align-items: centere;
+    padding: 1rem 0 1rem 0;
+    /* while debugging i found this because otherwise the info is overlapping with this so i need to put this on the top z-index */
+    z-index: 10;
+}
+
+.sticky-nav-icons {
+    margin-left: .75rem  ;
+}
+.sticky-nav-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-item  {
+    margin-right: 1rem; 
+}
+
+/* wowowowowow */
+@media (max-width:1000px){
+    .hide{
+        display: none;
+
+    }
+}
+.card{
+    background-color: #232323;
+    width: 150px;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-left: 1.5rem;
+    margin-top: 1rem ;
+}
+
+.cards-container{
+    display: flex;
+    /* flex-wrap is important to take in second line */
+    flex-wrap: wrap;
+     
+}
+
+.card-img{
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.card-title{
+    font-weight: 600;
+}
+
+.card-info{
+    font-size: .75rem;
+    opacity: 0.7;
+}
+
+.footer{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.line{
+    width: 95%;
+    height: 50%;
+    border-top: 1px solid white;
+    opacity: 0.4;
+
+}
+
+.music-player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++ */
+
+.album{
+    width: 20rem;
+    height:90%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    justify-content: space-between; 
+
+}
+
+/* .album-img{
+    width: 20%;
+    height:20px
+} */
+.left-img{
+    height:60px;
+    width: 60px;
+    /* margin-right: 2rem; */
+    border-radius: .3rem;
+} 
+
+.album-text{
+    padding-left: 1rem;
+    padding-right: 4rem;
+    font-size: 1rem;
+    /* margin-bottom: 10px; */
+}
+#love-icon{
+    margin-right: 8rem;
+    opacity: 50%;
+}
+#love-icon:hover{
+    opacity: .9 ;
+}
+.lower-p{
+    font-size: .7rem;
+    margin-top: 3px;
+    opacity: 50%;
+}
+.lower-p:hover{
+    opacity: .9 ;
+}
+.upper-p{
+    margin-bottom: 2px;
+}  
+
+
+/* ++++++++++++++++++++++++++++ */
+.player{
+    width: 50%;
+}
+.player-controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.controls{
+    width: 25%;
+    
+}
+.player-control-icon{
+    height: 1rem;
+    margin-right: 1.2rem;
+    opacity: .7;
+}
+.player-control-icon:hover{
+    opacity: 1 ;
+}
+.playback-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress-bar{
+    width: 70%;
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+    
+}
+/* read new documents quirksmode  sldier */
+.progress-bar::-webkit-slider-runnable-track{
+    background-color: #ddd;
+    border-radius: 100px;
+    height: .2rem;
+}
+.progress-bar::-webkit-slider-thumb{
+    appearance: none;
+    height: 1rem;
+    width: 1rem;
+    background-color: #1bd760;
+    border-radius: 50%;
+    margin-top: -6px;
+}
+
+/* ++++++++++++++++++++++++++++ */
+.controls{
+   
+    /* margin-left: 2rem; */
+    justify-content: space-between;
+    text-align: right;
+ 
+}
+
+
+
+#o1{
+    padding: .3rem;
+    opacity: 50%;
+} 
+#o1:hover{
+    opacity: 1 ;
+}
+#o2{
+    padding: .3rem;
+    opacity: 50%;
+} 
+#o2:hover{
+    opacity: 1 ;
+}
+#o3{
+    padding: .3rem;
+    opacity: 50%;
+} 
+#o3:hover{
+    opacity: 1 ;
+}
+#o4{
+    padding: .3rem;
+    opacity: 50%;
+}
+#o4:hover{
+    opacity: 1 ;
+} 
+#o5{
+    padding: .3rem;
+    opacity: 50%;
+} 
+#o5:hover{
+    opacity: 1 ;
+}
+
+
+/* similar as the main progess bar just little change according to the size */
+.small-progress-bar{
+    width: 30%;
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+    opacity: 100%;
+    padding-bottom: .3rem;
+    
+}
+/* read new documents quirksmode  sldier */
+.small-progress-bar::-webkit-slider-runnable-track{
+    background-color: #ddd;
+    border-radius: 100px;
+    height: .2rem;
+}
+.small-progress-bar::-webkit-slider-thumb{
+    appearance: none;
+    height: 1rem;
+    width: 1rem;
+    background-color: #1bd760;
+    border-radius: 50%;
+    margin-top: -6px;
+}
